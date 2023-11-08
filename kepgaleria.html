@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soma weboldala</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg navback">
+            <div class="container-fluid">
+              <a class="navbar-brand">Soma weboldala</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="oneletrajz.html">Önéletrajz</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="orarend.html">Órarend</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="naptar.html">Naptár</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active">Képgaléria</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="videogyujtemeny.html">Videógyűjtemény</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sakktabla.html">Sakktábla</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8 mb-5">
+                    <div class="card">
+                        <div class="card-body p-4 pb-2">
+                            <h4 class="mb-3">Kép galéria</h4>
+                            <style>
+                             
+                              .gec {
+                                transition: transform 0.3s;
+                              }
+                              .gec:hover {
+                                transform: scale(1.05);
+                              }
+
+                              .picked {
+                                box-shadow: 0px 0px 8px 2px rgba(252,182,3,0.75);
+                              }
+
+                              .picker {
+                                position: relative;
+                                  width: 100%;
+                                  aspect-ratio: 3/2;
+                                  overflow: hidden;
+                                  border-radius: 5px;
+                                  transition: box-shadow 0.5s;
+                                  
+                              }
+
+                              .picker .title {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform:translate(-50%, -50%);
+                                font-size: 20px;
+                                font-weight: 500;
+                              }
+
+                              .picker .holder {
+                                width: 100%; /* Set the width of the container */
+                                height: 100%; /* Set the height of the container */
+                                 /* Set your background image URL */
+                                background-size: cover;
+                                background-position: center;
+                                transition: transform 0.3s;
+                                filter: blur(2px);
+                              }
+
+                              .picker:hover .holder {
+                                transform: scale(1.2); /* Scale the background image to 110% on hover */
+                              }
+
+                              .thumb {
+                                border-radius: 4px;
+                                width: 100%; aspect-ratio: 3 / 2;
+                              }
+                            </style>
+                           
+                            <div class="row mb-4">
+                              <div class="col-4">
+
+                                <div class="picker picked" onclick="switchTo(0)" id="cat0">
+                                    <div class="holder" style="background-image: url('erdo/mup4yhdqjgm31.jpg');"></div>
+                                    <span class="title">Erdő</span>
+                                </div>
+                              </div>
+                              <div class="col-4">
+                                <div class="picker" onclick="switchTo(1)" id="cat1">
+                                  <div class="holder" style="background-image: url('nether/maxresdefault.jpg'); "></div>
+                                  <span class="title">Alvilág</span>
+                              </div>
+                              </div>
+                              <div class="col-4">
+                                <div class="picker" onclick="switchTo(2)" id="cat2">
+                                  <div class="holder" style="background-image: url('all.png');"></div>
+                                  <span class="title">Összes</span>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="row" id="cathold0">
+                            
+                              
+                            </div>
+                            <div class="row" id="cathold1" style="display: none;">
+                            
+                              
+                            </div>
+
+                           
+
+                           
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered" style="max-width: 50%;">
+                                <div class="modal-content">
+                                 
+                                  <div class="modal-body">
+                                    <img id="fos" class="mb-3" style="width: 100%; aspect-ratio: 3 / 2; border-radius: 5px;" src="nether/5596100-cbvdbmjm-v4.webp">
+                                    <h5 id="titties" class="mb-2"></h5>
+                                    <span id="desce"></span>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+      let current = 0; // 0 - trees, 1 - nether, 2 - all
+
+      let pickers = [
+        document.getElementById("cat0"),
+        document.getElementById("cat1"),
+        document.getElementById("cat2"),
+      ];
+
+      let galleryHolders = [
+        document.getElementById("cathold0"),
+        document.getElementById("cathold1"),
+      ]
+
+      const switchTo = (cat) => {
+        current = cat;
+        for (let i = 0; i < pickers.length; i++)
+        {
+          pickers[i].classList.remove("picked")
+        }
+        pickers[current].classList.add("picked")
+
+        for (let j = 0; j < galleryHolders.length; j++)
+        {
+          galleryHolders[j].style.display = "none";
+        }
+
+        if (current == 2) {
+          galleryHolders[0].style.display = "flex";
+          galleryHolders[1].style.display = "flex";
+        } else {
+          galleryHolders[current].style.display = "flex";
+        }
+      }
+
+      let erdo = [
+  {
+    "uuid": "c2e35d09-43c1-4a19-9567-91f9ac0dbb23",
+    "title": "Varázslatos Erdő",
+    "description": "Egy mesebeli erdő, zöld növényekkel és élénk állatvilággal.",
+    "file": "2021-11-18_16.58.20.webp"
+  },
+  {
+    "uuid": "2f5a9f4e-7c89-4870-9df1-acc7d5e8e6a2",
+    "title": "Misztikus Liget",
+    "description": "Egy csendes ligeti kép, amely titokzatossággal van átitatva.",
+    "file": "5cffe4ef26cfd49997e5e0624efdc53a.jpg"
+  },
+  {
+    "uuid": "cb59ffde-43b0-4a5d-9b9a-5b748cf8cf29",
+    "title": "Naplemente az Erdőben",
+    "description": "Az erdő arany színű fényekben úszik egy gyönyörű naplemente alatt.",
+    "file": "cdb2a3ce8d13a227342a8a6674cec071.jpg"
+  },
+  {
+    "uuid": "70c2dcb0-6d35-4f88-950f-1982d1a8d1cc",
+    "title": "Varázslatos Liget",
+    "description": "Egy rejtett liget, tele ősi fákkal és csodákkal.",
+    "file": "d4rzg0j-1c8a986b-bb80-4b6a-88de-caf33a14c7ea.png"
+  },
+  {
+    "uuid": "5e1760c7-10d5-4ce3-8f69-3b51b78933a3",
+    "title": "Erdői Oázis",
+    "description": "Egy békés oázis az erdő közepén.",
+    "file": "Epia9WxXEAEOkt5.jpg"
+  },
+  {
+    "uuid": "b47b7037-41df-42f4-ba71-5f9e4a0ad53d",
+    "title": "Suttogó Erdei",
+    "description": "Az erdő, ahol a fák egymásnak suttognak titkokat.",
+    "file": "guc708gz1br41.webp"
+  },
+  {
+    "uuid": "f696ace5-dfc2-45c7-953d-1c3f50993db4",
+    "title": "Ködös Erdő",
+    "description": "Egy ködös erdő, amely tele van rejtéllyel és izgalommal.",
+    "file": "mfm0trI.png"
+  },
+  {
+    "uuid": "4e04b2e9-c1b3-4845-8f6e-b17ca0e55a91",
+    "title": "Minecraft Erdő",
+    "description": "Egy Minecraft világ erdeje, ahol a kalandok várnak.",
+    "file": "minecraft-7202839_1280.jpg"
+  },
+  {
+    "uuid": "8992b6cc-6e45-46e9-8d57-5b6b8699ccdb",
+    "title": "Rejtélyes Liget",
+    "description": "Egy rejtélyes liget, ahol a titok és csoda mindenhol jelen van.",
+    "file": "mup4yhdqjgm31.jpg"
+  },
+  {
+    "uuid": "5464be5f-8576-490c-94c0-79214c36c079",
+    "title": "Erdővidék",
+    "description": "Egy természetes erdővidék, ahol az élővilág szépsége tárul elénk.",
+    "file": "wallhaven-ex8lol.png"
+  }
+];
+
+var gallery = document.getElementById("cathold0");
+
+    for (var i = 0; i < erdo.length; i++) {
+      var imageObj = erdo[i];
+
+      var col = document.createElement("div");
+      col.className = "col-3 mb-3";
+
+      var img = document.createElement("img");
+      img.className = "thumb";
+      img.src = "erdo/" + imageObj.file;
+      console.log(imageObj)
+      img.addEventListener("click", (function(image) {
+    return function() {
+      let hf = document.getElementById("fos");
+      hf.src = "erdo/" + image.file;
+      document.getElementById("titties").innerHTML = image.title
+      document.getElementById("desce").innerHTML = image.description
+      const myModal = new bootstrap.Modal('#exampleModal', {
+        keyboard: false
+      });
+      myModal.show();
+    };
+  })(imageObj));
+      
+
+      col.appendChild(img);
+      gallery.appendChild(col);
+    }
+
+let nether = [
+  {
+    "title": "Minecraft Nether Tájkép",
+    "description": "A Minecraft Nether égő és misztikus tájának képe.",
+    "file": "5596100-cbvdbmjm-v4.webp"
+  },
+  {
+    "title": "Nether Portál Csoda",
+    "description": "Nézd meg a Nether portál varázslatát a Minecraft világában.",
+    "file": "585eb-16625651387032-1920.avif"
+  },
+  {
+    "title": "Vad Nether Felfedezés",
+    "description": "Merülj el a vad Nether felfedezésében a Minecraft veszélyes, de izgalmas világában.",
+    "file": "76a7f47b-589e-4280-82c6-bc3e13fc8b73_minecraft-nether_1920x1080_work_03.avif"
+  },
+  {
+    "title": "Nether Teremtmények Varázsa",
+    "description": "Fedezd fel a Nether teremtményeinek varázslatát a Minecraft Nether birodalmában.",
+    "file": "complementary-shaders-is-amazing-in-the-nether-minecraft-v0-jwd40lcq74eb1.png"
+  },
+  {
+    "title": "Minecraft Nether Szépsége",
+    "description": "Csodálkozz a Minecraft Nether világának szépségében ezen a képen.",
+    "file": "EUHkcPfXgAEliJC.jpg"
+  },
+  {
+    "title": "Minecraft Nether Szépség",
+    "description": "Lépj be a Nether birodalmába ezen a varázslatos képen.",
+    "file": "maxresdefault.jpg"
+  },
+  {
+    "title": "Minecraft Nether Kaland",
+    "description": "Indulj el egy izgalmas Minecraft Nether kalandra ezen a képen.",
+    "file": "maxresdefault2.jpg"
+  },
+  {
+    "title": "Oceano Shader a Netherben",
+    "description": "Élvezd az Oceano Shader által nyújtott látványt a Minecraft Netherben.",
+    "file": "oceano-shader-nether-696x392.jpg"
+  },
+  {
+    "title": "Minecraft Nether Csoda",
+    "description": "Csodálkozz a Minecraft Nether világának misztikus csodájában.",
+    "file": "ppx1ptj.png"
+  },
+  {
+    "title": "Varázslatos Nether Világ",
+    "description": "Egy varázslatos világ vár a Minecraft Nether birodalmában ezen a képen.",
+    "file": "ztt3h45vdly41.webp"
+  }
+]
+
+gallery = document.getElementById("cathold1");
+
+    for (var i = 0; i < nether.length; i++) {
+      var imageObj = nether[i];
+
+      var col = document.createElement("div");
+      col.className = "col-3 mb-3";
+
+      var img = document.createElement("img");
+      img.className = "thumb";
+      img.src = "nether/" + imageObj.file;
+      console.log(imageObj)
+      img.addEventListener("click", (function(image) {
+      return function() {
+        let hf = document.getElementById("fos");
+        hf.src = "nether/" + image.file;
+        document.getElementById("titties").innerHTML = image.title
+        document.getElementById("desce").innerHTML = image.description
+        const myModal = new bootstrap.Modal('#exampleModal', {
+          keyboard: false
+        });
+      myModal.show();
+    };
+  })(imageObj));
+      
+
+      col.appendChild(img);
+      gallery.appendChild(col);
+    }
+    </script>
+  </body>
+</html>

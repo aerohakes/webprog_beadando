@@ -1,0 +1,64 @@
+.navback {
+    background-color: #202020;
+    color: white !important;
+    border-bottom: 2px solid #fcb603;
+    box-shadow: 1px 1px 22px 3px rgba(252,182,3,0.75);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.card {
+    background-color: #202020 !important;
+    border: 2px solid #4e4e4e !important;
+}
+
+.modal-content {
+    background-color: #202020 !important;
+}
+
+body {
+    background-image: url("wallpaper.png");
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif !important;
+    color: #fff !important;
+}
+
+.ctable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    color: #ffffff !important;
+    border-radius: 3px !important;
+    
+}
+.ctable th, td {
+    border: 1px solid #5c5c5c !important;
+    padding: 8px;
+    text-align: center;
+    color: #fff !important;
+}
+.ctable th {
+    border: 1px solid #ddd;
+    background-color: #202020;
+    color: #fff !important;
+}
+.weekend {
+    color: rgb(255, 95, 95) !important;
+    background-color: rgb(91, 35, 35);
+    font-weight: bold !important;
+}
+.last {
+    opacity: 0.5;
+}
+
+.fos {
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+.btn-dark {
+    background-color: #303030 !important;
+}
